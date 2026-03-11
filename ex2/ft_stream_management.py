@@ -2,12 +2,14 @@ import sys
 
 
 def main() -> None:
-    id_ = input("\nInput Stream active. Enter archivist ID: ")
-    report = input("input Stream active. Enter status report: ")
+    print("\nInput Stream active. Enter archivist ID: ", end="", flush=True)
+    id_ = sys.stdin.readline().strip()
+    print("input Stream active. Enter status report: ", end="", flush=True)
+    report = sys.stdin.readline().strip()
     sys.stdout.write(f"\n[STANDARD] Archive status from {id_}: ")
     sys.stdout.write(f"All systems norminal: {report}\n")
-    comm = "Communication channels verified\n"
-    sys.stderr.write(f"[ALERT] System diagnostic: {comm}")
+    comm = "Communication channels verified"
+    sys.stderr.write(f"[ALERT] System diagnostic: {comm}\n")
     sys.stdout.write("[STANDARD] Data trancmission complete\n")
     print("\nThree-channel communication test successful")
 
