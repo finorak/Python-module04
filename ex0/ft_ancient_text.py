@@ -5,9 +5,8 @@ def main() -> None:
         file = open("./" + file_name, "r")
         print("Connection established...\n")
         print("RECOVERED DATA:")
-        lines = file.readlines()
-        for line in lines:
-            print(line, end="")
+        lines = file.read()
+        print(lines)
         file.close()
         print("\n\nData recovery complete. Storage unit disconnected.")
     except FileNotFoundError:

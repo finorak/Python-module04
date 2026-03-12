@@ -1,28 +1,17 @@
 import sys
 
 
-def ft_strip(string: str) -> str:
-    strings = ""
-    for char in string:
-        if char == "\n":
-            break
-        strings += char
-    return strings
-
-
 def main() -> None:
-    print("\nInput Stream active. Enter archivist ID: ", end="", flush=True)
-    id_ = ft_strip(sys.stdin.readline())
-    print("input Stream active. Enter status report: ", end="", flush=True)
-    report = ft_strip(sys.stdin.readline())
-    sys.stdout.write(f"\n[STANDARD] Archive status from {id_}: ")
-    sys.stdout.write(f"All systems norminal: {report}\n")
+    id_ = input("Input Stream active. Enter archivist ID: ")
+    report = input("input Stream active. Enter status report: ")
+    print(f"\n[STANDARD] Archive status from {id_}: ", end="")
+    print(f"{report}")
     comm = "Communication channels verified"
-    sys.stderr.write(f"[ALERT] System diagnostic: {comm}\n")
-    sys.stdout.write("[STANDARD] Data trancmission complete\n")
+    print(f"[ALERT] System diagnostic: {comm}", file=sys.stderr)
+    print("[STANDARD] Data trancmission complete")
     print("\nThree-channel communication test successful")
 
 
 if __name__ == "__main__":
-    print("=== CYBER ARCHIVES - COMMUNICATION SYSTEM ===")
+    print("=== CYBER ARCHIVES - COMMUNICATION SYSTEM ===\n")
     main()
