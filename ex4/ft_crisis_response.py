@@ -6,7 +6,7 @@ def main(file_name: str) -> None:
     print("\nCRISIS ALERT:", alert)
     try:
         with open(file_name, "r") as file:
-            response_line = file.readline()
+            response_line = file.read()
     except FileNotFoundError:
         response = "RESPONSE: Archive not found in storage matrix"
         status = "Crisis handled, system stable"
