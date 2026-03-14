@@ -8,7 +8,7 @@ def main() -> None:
             lines = file.read()
             print("SECURE EXTRACTION:")
             print(lines)
-        with open(file_name, "a") as file:
+        with open(file_name, "w") as file:
             print("\nSECURE PRESERVATION:")
             data = """[CLASSIFIED] New security protocols archived
 [CLASSIFIED] File is good"""
