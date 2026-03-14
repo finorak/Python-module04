@@ -13,8 +13,8 @@ def main() -> None:
         print("\nData inscription complete. Storage unit seald.")
         print(f"Archive '{file_name}' ready for long-term", end=" ")
         print("preservation")
-    except FileNotFoundError:
-        print("ERROR: Storage vault not found")
+    except Exception as e:
+        print(f"ERROR: {e}")
 
 
 if __name__ == "__main__":

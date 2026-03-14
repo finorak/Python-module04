@@ -7,16 +7,13 @@ def main(file_name: str) -> None:
     try:
         with open(file_name, "r") as file:
             response_line = file.read()
-    except FileNotFoundError:
-        response = "RESPONSE: Archive not found in storage matrix"
+    except Exception as e:
+        response = f"RESPONSE: {e}"
         status = "Crisis handled, system stable"
-    except PermissionError:
-        response = "RESPONSE: Read persmission denied"
-        status = "Crisis handled, security maintained"
     if response_line:
         print("CRISIS ALERT: ", end="")
         print(f"Archive recovered - ``{response_line}``")
-    else:
+    elif response:
         print(response)
     print("STATUS:", status)
 

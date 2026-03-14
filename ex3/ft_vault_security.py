@@ -10,11 +10,11 @@ def main() -> None:
             print(lines)
         with open(file_name, "a") as file:
             print("\nSECURE PRESERVATION:")
-            data ="""[CLASSIFIED] New security protocols archived
+            data = """[CLASSIFIED] New security protocols archived
 [CLASSIFIED] File is good"""
             file.write(data)
-    except FileNotFoundError:
-        print(f"ERROR: `{file_name}` not found")
+    except Exception as e:
+        print(f"ERROR: {e}")
     print("All vault operations completed with maximum security.")
 
 

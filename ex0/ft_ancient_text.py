@@ -9,7 +9,7 @@ def main() -> None:
         print(lines)
         file.close()
         print("\n\nData recovery complete. Storage unit disconnected.")
-    except FileNotFoundError:
+    except Exception:
         print("ERROR: Storage vault not found.", end=" ")
         print("Run data generator first.")
 
